@@ -1,6 +1,7 @@
 # GustoppenKit
-Funções simples para ajudar o seu projeto a ficar mais dinâmico, confiável e robusto.
+Funções simples para ajudar o seu projeto a ficar mais confiável e independente.
 ------------
 Projetos:<br>
-🏷️Prefixer<br>
+🏷️Labelizer<br>
 🎨Color Validator
+🐞DebugBox
