@@ -1,10 +1,10 @@
 <?php 
 /*
 BIBLIOTECA PHP "GusToppenKit"
-Desenvolvido por: Gustavo Bayeux Franco
-Gerido pela: GusToppen
+Desenvolvida por: Gustavo Bayeux Franco
+Mantida pela: GusToppen
 */
-
+namespace GusToppenKit;
 
 
 //VALIDAÇÃO DE CORES
