@@ -485,3 +485,36 @@ function debug(mixed $input,$type = null, $key = null){
     }
    
    }
+
+  //VALIDAÇÃO DE ENTRADA SQL
+function preventSql($statement,$prevent){
+  switch($prevent){
+          
+   case null:
+   case '':       
+   case 'default':
+     $prohibitedStatements = ["DELETE","DROP","TRUNCATE"];
+     foreach($prohibitedStatements as $key){
+         if(str_contains($statement,$key)){
+             return false;
+         }
+     }     
+   break;
+          
+   default:       
+    if(is_array($prevent)){
+     foreach($prevent as $key){
+         if(str_contains($statement,$key)){
+             return false;
+         }
+     }   
+    }else{
+     if(str_contains($statement,$prevent)){
+        return false; 
+     }
+    }
+   break;
+  
+  }
+}
+
