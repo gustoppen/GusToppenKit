@@ -486,35 +486,41 @@ function debug(mixed $input,$type = null, $key = null){
    
    }
 
-  //VALIDAÇÃO DE ENTRADA SQL
-function preventSql($statement,$prevent){
+//VALIDAÇÃO DE ENTRADA SQL
+function preventSql($statement,$prevent = null){
   switch($prevent){
           
    case null:
    case '':       
    case 'default':
+      
      $prohibitedStatements = ["DELETE","DROP","TRUNCATE"];
      foreach($prohibitedStatements as $key){
          if(str_contains($statement,$key)){
              return false;
+         }else{
+             return true;
          }
      }     
    break;
           
-   default:       
+   default:
     if(is_array($prevent)){
      foreach($prevent as $key){
          if(str_contains($statement,$key)){
              return false;
-         }
-     }   
-    }else{
+         }else{
+             return true;
+         }   
+     }       
+    }else{   
      if(str_contains($statement,$prevent)){
-        return false; 
+             return false; 
+     }else{
+             return true;
      }
     }
    break;
   
   }
 }
-
