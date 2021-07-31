@@ -408,7 +408,7 @@ function debug(mixed $input,$type = null, $key = null){
   
     if($input != 'log'){   
     if(!empty($type) || !empty($key)){
-     if(isset($_GET['a'])){ 
+     if(isset($_GET["$key"])){ 
        switch($type){
          case 'print_r':
          case 'print':
